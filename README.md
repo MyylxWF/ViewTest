@@ -7,3 +7,4 @@
    
 ### 2：BrokenLineView
     一个简单的折线图
+   ![](https://github.com/MyylxWF/ViewTest/blob/master/Pic/BrokenLineImage.png)
