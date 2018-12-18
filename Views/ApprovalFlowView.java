@@ -157,6 +157,7 @@ public class ApprovalFlowView extends View {
             paintTwo.setStrokeWidth(1);
             paintTwo.setStyle(Paint.Style.FILL);
             String name = data.get(i).getName();
+            if (TextUtils.isEmpty(name)) continue;
             paintTwo.getTextBounds(name, 0, name.length(), fontRect);
             int fontW = fontRect.width();
             int fontH = fontRect.height();
@@ -173,7 +174,14 @@ public class ApprovalFlowView extends View {
                         canvas.drawText(name, getWidth() / 2 - fontW / 2, getHeight() / 2 + fontH / 2, paintTwo);
                     }
                 } else {
-                    canvas.drawText(name, paddingSE + radius - fontW / 2, paddingTB + radius + i * circleSpacing + fontH / 2, paintTwo);
+                    if (name.length() > 3) {
+                        String nameOne = name.substring(0, 2);
+                        String nameTwo = name.substring(2, 4);
+                        canvas.drawText(nameOne, paddingSE + radius - fontW / 4, paddingTB + radius + i * circleSpacing - dp2px(1), paintTwo);
+                        canvas.drawText(nameTwo, paddingSE + radius - fontW / 4, paddingTB + radius + i * circleSpacing + dp2px(1) + fontH, paintTwo);
+                    } else {
+                        canvas.drawText(name, paddingSE + radius - fontW / 2, paddingTB + radius + i * circleSpacing + fontH / 2, paintTwo);
+                    }
                 }
             }
         }
@@ -197,6 +205,7 @@ public class ApprovalFlowView extends View {
         paintTwo.setTextSize(dp2px(10));
         for (int i = 0; i < data.size(); i++) {
             String tag = data.get(i).getTag();
+            if (TextUtils.isEmpty(tag)) continue;
             paintTwo.getTextBounds(tag, 0, tag.length(), fontRect);
             int fontW = fontRect.width();
             int fontH = fontRect.height();
