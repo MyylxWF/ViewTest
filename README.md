@@ -8,3 +8,6 @@
 ### 2：BrokenLineView
     一个简单的折线图
    ![](https://github.com/MyylxWF/ViewTest/blob/master/Pic/BrokenLineImage.png)
+### 3：ApprovalFlowView
+    一个审批流程的View(有横竖两种类型,下图是它的4种展现方式)
+   ![](https://github.com/MyylxWF/ViewTest/blob/master/Pic/ApprovalFlowPic.png)
